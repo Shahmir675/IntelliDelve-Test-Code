@@ -93,7 +93,6 @@ const TestimonialSlideshow = memo<TestimonialSlideshowProps>(
                       height: "48px",
                       width: "48px",
                       borderRadius: 100,
-                      backgroundColor: "lightgrey",
                     }}
                     className="mr-4"
                   ></div>
@@ -165,7 +164,6 @@ const TestimonialSlideshow = memo<TestimonialSlideshowProps>(
                     height: "48px",
                     width: "48px",
                     borderRadius: 100,
-                    backgroundColor: "lightgrey",
                   }}
                   className="w-12 h-12 rounded-full mx-auto mb-2"
                 ></div>

@@ -80,7 +80,7 @@ const CitizenByInvestment = memo(() => {
       country: "Premium Citizenship Program",
       description:
         "Expert support for fast, compliant citizenship applications.",
-      investment: "$100,000+",
+      investment: "$100,000",
       timeframe: "3-4 months",
     },
     {
@@ -330,24 +330,6 @@ const CitizenByInvestment = memo(() => {
                   <h6 className="text-xs font-normal text-gray-900 dark:text-white mb-2">
                     {program.description}
                   </h6>
-                  <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-600 dark:text-gray-300">
-                        Investment:
-                      </span>
-                      <span className="text-sm font-semibold text-gray-900 dark:text-white">
-                        {program.investment}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-sm text-gray-600 dark:text-gray-300">
-                        Timeframe:
-                      </span>
-                      <span className="text-sm font-semibold text-gray-900 dark:text-white">
-                        {program.timeframe}
-                      </span>
-                    </div>
-                  </div>
                 </div>
               </div>
             ))}
