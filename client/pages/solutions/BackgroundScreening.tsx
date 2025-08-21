@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { SolutionPage } from "../../components/SolutionPage";
 import { SEO } from "../../components/SEO";
 import { useCalendlyContext } from "../../App";
+import Image_Background_Screening from "../../../public/images/downloaded/Image_Background_Screening.jpeg";
 
 const BackgroundScreening: React.FC = () => {
   const { openCalendly } = useCalendlyContext();
@@ -39,27 +40,33 @@ const BackgroundScreening: React.FC = () => {
       benefits: [
         {
           name: "Lightning-Fast Processing",
-          description: "Fastest turnaround time in the industry with 24-hour average completion"
+          description:
+            "Fastest turnaround time in the industry with 24-hour average completion",
         },
         {
           name: "Unmatched Accuracy",
-          description: "99.8% accuracy rate verified by independent audits and client feedback"
+          description:
+            "99.8% accuracy rate verified by independent audits and client feedback",
         },
         {
           name: "Global Reach",
-          description: "Global coverage across 100+ countries with local compliance expertise"
+          description:
+            "Global coverage across 100+ countries with local compliance expertise",
         },
         {
           name: "AI-Powered Intelligence",
-          description: "AI-powered risk scoring and pattern analysis for enhanced decision making"
+          description:
+            "AI-powered risk scoring and pattern analysis for enhanced decision making",
         },
         {
           name: "Full Compliance",
-          description: "FCRA, GDPR, and SOC 2 Type II compliant processes and data handling"
+          description:
+            "FCRA, GDPR, and SOC 2 Type II compliant processes and data handling",
         },
         {
           name: "Dedicated Support",
-          description: "24/7 customer support with dedicated account management"
+          description:
+            "24/7 customer support with dedicated account management",
         },
       ],
     },
@@ -89,20 +96,20 @@ const BackgroundScreening: React.FC = () => {
       />
 
       <div className={`min-h-screen ${solutionData.bgColor}`}>
-
         <section className="relative min-h-screen flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden">
-
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2126&q=80')`,
+              backgroundImage: `url(${Image_Background_Screening})`,
             }}
           ></div>
 
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/70 to-purple-900/80"></div>
 
           <div className="max-w-4xl mx-auto text-center relative z-10">
-            <div className={`inline-flex items-center justify-center w-20 h-20 ${solutionData.color} bg-white/90 rounded-2xl mb-8`}>
+            <div
+              className={`inline-flex items-center justify-center w-20 h-20 ${solutionData.color} bg-white/90 rounded-2xl mb-8`}
+            >
               {solutionData.icon}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-primary">
@@ -114,7 +121,9 @@ const BackgroundScreening: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={() => openCalendly(`${solutionData.title} - Consultation`)}
+                onClick={() =>
+                  openCalendly(`${solutionData.title} - Consultation`)
+                }
                 className="bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-colors duration-300 font-primary inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
               >
                 Schedule Consultation
@@ -125,11 +134,15 @@ const BackgroundScreening: React.FC = () => {
                 to="/what-we-offer#background-screening-and-risk-mitigation"
                 className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary transition-all duration-300 font-primary inline-flex items-center justify-center gap-2"
                 onClick={() => {
-
                   setTimeout(() => {
-                    const element = document.getElementById('background-screening-and-risk-mitigation');
+                    const element = document.getElementById(
+                      "background-screening-and-risk-mitigation",
+                    );
                     if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
                     }
                   }, 100);
                 }}
@@ -153,10 +166,15 @@ const BackgroundScreening: React.FC = () => {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {solutionData.what.features.map((feature, index) => (
-                <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
+                <div
+                  key={index}
+                  className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl"
+                >
                   <div className="flex items-center mb-3">
                     <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white">{feature}</h3>
+                    <h3 className="font-semibold text-gray-900 dark:text-white">
+                      {feature}
+                    </h3>
                   </div>
                 </div>
               ))}
@@ -176,7 +194,10 @@ const BackgroundScreening: React.FC = () => {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {solutionData.why.benefits.map((benefit, index) => (
-                <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
+                <div
+                  key={index}
+                  className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg"
+                >
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 font-primary">
                     {benefit.name}
                   </h3>
@@ -221,12 +242,15 @@ const BackgroundScreening: React.FC = () => {
               Ready to Get Started?
             </h2>
             <p className="text-xl mb-8 font-secondary">
-              Schedule a consultation to learn how our background screening & risk mitigation solutions can benefit your organization.
+              Schedule a consultation to learn how our background screening &
+              risk mitigation solutions can benefit your organization.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={() => openCalendly(`${solutionData.title} - Consultation`)}
+                onClick={() =>
+                  openCalendly(`${solutionData.title} - Consultation`)
+                }
                 className="bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors duration-300 font-primary inline-flex items-center justify-center gap-2"
               >
                 Schedule Consultation
@@ -237,11 +261,15 @@ const BackgroundScreening: React.FC = () => {
                 to="/what-we-offer#background-screening-and-risk-mitigation"
                 className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary transition-all duration-300 font-primary inline-flex items-center justify-center gap-2"
                 onClick={() => {
-
                   setTimeout(() => {
-                    const element = document.getElementById('background-screening-and-risk-mitigation');
+                    const element = document.getElementById(
+                      "background-screening-and-risk-mitigation",
+                    );
                     if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
                     }
                   }, 100);
                 }}
