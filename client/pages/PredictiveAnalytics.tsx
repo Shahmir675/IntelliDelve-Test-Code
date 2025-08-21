@@ -14,6 +14,7 @@ import {
   Users,
 } from "lucide-react";
 import { useCalendlyContext } from "../App";
+import { Helmet } from "react-helmet-async";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -111,9 +112,15 @@ export default function PredictiveAnalytics() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Predictive Analytics & Forecasting</title>
+        <meta
+          name="description"
+          content="Advanced AI-powered predictive analytics and forecasting solutions"
+        />
+      </Helmet>
 
       <section className="relative min-h-screen flex items-center overflow-hidden">
-
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80&blur=20"
@@ -156,12 +163,18 @@ export default function PredictiveAnalytics() {
                 </span>
               </h1>
               <p className="text-xl text-gray-100 mb-8 leading-relaxed">
-                Advanced AI-powered predictive analytics and forecasting solutions to anticipate future trends, assess risks, and make data-driven decisions with statistical confidence.
+                Advanced AI-powered predictive analytics and forecasting
+                solutions to anticipate future trends, assess risks, and make
+                data-driven decisions with statistical confidence.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button
-                  onClick={() => openCalendly("Predictive Analytics & Forecasting - Schedule Meeting")}
+                  onClick={() =>
+                    openCalendly(
+                      "Predictive Analytics & Forecasting - Schedule Meeting",
+                    )
+                  }
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-violet-600 text-white font-semibold rounded-full hover:from-purple-600 hover:to-violet-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Schedule a Meeting
@@ -183,26 +196,38 @@ export default function PredictiveAnalytics() {
                   <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-violet-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Brain className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">AI-Powered Insights</h3>
-                  <p className="text-gray-200">Machine learning predictions and forecasts</p>
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    AI-Powered Insights
+                  </h3>
+                  <p className="text-gray-200">
+                    Machine learning predictions and forecasts
+                  </p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <TrendingUp className="w-6 h-6 text-purple-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold text-sm">Trends</div>
+                    <div className="text-white font-semibold text-sm">
+                      Trends
+                    </div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <Target className="w-6 h-6 text-violet-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold text-sm">Forecasts</div>
+                    <div className="text-white font-semibold text-sm">
+                      Forecasts
+                    </div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <BarChart3 className="w-6 h-6 text-indigo-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold text-sm">Analytics</div>
+                    <div className="text-white font-semibold text-sm">
+                      Analytics
+                    </div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <Zap className="w-6 h-6 text-pink-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold text-sm">Insights</div>
+                    <div className="text-white font-semibold text-sm">
+                      Insights
+                    </div>
                   </div>
                 </div>
               </div>
@@ -329,7 +354,8 @@ export default function PredictiveAnalytics() {
               Key Capabilities
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Advanced predictive analytics capabilities designed to enhance your decision-making process
+              Advanced predictive analytics capabilities designed to enhance
+              your decision-making process
             </p>
           </div>
 
@@ -344,7 +370,9 @@ export default function PredictiveAnalytics() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Use advanced machine learning models to anticipate future outcomes across hiring, compliance, and business operations with statistical confidence.
+                Use advanced machine learning models to anticipate future
+                outcomes across hiring, compliance, and business operations with
+                statistical confidence.
               </p>
             </div>
 
@@ -358,7 +386,8 @@ export default function PredictiveAnalytics() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Assess risk levels with precision using real-time behavioral patterns, historical data, and anomaly detection.
+                Assess risk levels with precision using real-time behavioral
+                patterns, historical data, and anomaly detection.
               </p>
             </div>
 
@@ -372,7 +401,9 @@ export default function PredictiveAnalytics() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Uncover potentially fraudulent candidates or cases before processing begins. Our models identify suspicious activity with high accuracy and low false positives.
+                Uncover potentially fraudulent candidates or cases before
+                processing begins. Our models identify suspicious activity with
+                high accuracy and low false positives.
               </p>
             </div>
 
@@ -386,7 +417,8 @@ export default function PredictiveAnalytics() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Get instant access to predictive insights through an intuitive dashboard designed for speed and clarity.
+                Get instant access to predictive insights through an intuitive
+                dashboard designed for speed and clarity.
               </p>
             </div>
 
@@ -400,7 +432,8 @@ export default function PredictiveAnalytics() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Build and deploy tailored prediction models aligned with your organization's workflows, compliance needs, and risk landscape.
+                Build and deploy tailored prediction models aligned with your
+                organization's workflows, compliance needs, and risk landscape.
               </p>
             </div>
           </div>

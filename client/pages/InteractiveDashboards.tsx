@@ -12,13 +12,14 @@ import {
   Monitor,
   Users,
   FileText,
-  Settings
+  Settings,
 } from "lucide-react";
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useCalendlyContext } from "../App";
+import { Helmet } from "react-helmet-async";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,7 +35,7 @@ export default function InteractiveDashboards() {
       gsap.fromTo(
         headerRef.current,
         { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
       );
     }
 
@@ -52,7 +53,7 @@ export default function InteractiveDashboards() {
             trigger: capabilitiesRef.current,
             start: "top 80%",
           },
-        }
+        },
       );
     }
 
@@ -70,7 +71,7 @@ export default function InteractiveDashboards() {
             trigger: featuresRef.current,
             start: "top 80%",
           },
-        }
+        },
       );
     }
 
@@ -88,16 +89,22 @@ export default function InteractiveDashboards() {
             trigger: useCasesRef.current,
             start: "top 80%",
           },
-        }
+        },
       );
     }
   }, []);
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Interactive Dashboards & Business Intelligence</title>
+        <meta
+          name="description"
+          content="Transform your data into actionable insights with our interactive dashboards and business intelligence solutions."
+        />
+      </Helmet>
 
       <section className="relative min-h-screen flex items-center overflow-hidden">
-
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
@@ -140,12 +147,18 @@ export default function InteractiveDashboards() {
                 </span>
               </h1>
               <p className="text-xl text-gray-100 mb-8 leading-relaxed">
-                Turn raw data into powerful visual stories and operational clarity with advanced business intelligence platform designed for real-time decision-making.
+                Turn raw data into powerful visual stories and operational
+                clarity with advanced business intelligence platform designed
+                for real-time decision-making.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button
-                  onClick={() => openCalendly("Interactive Dashboards & Business Intelligence - Schedule Meeting")}
+                  onClick={() =>
+                    openCalendly(
+                      "Interactive Dashboards & Business Intelligence - Schedule Meeting",
+                    )
+                  }
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Schedule a Meeting
@@ -167,26 +180,38 @@ export default function InteractiveDashboards() {
                   <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <BarChart3 className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Real-Time Analytics</h3>
-                  <p className="text-gray-200">Live data visualization and insights</p>
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    Real-Time Analytics
+                  </h3>
+                  <p className="text-gray-200">
+                    Live data visualization and insights
+                  </p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <PieChart className="w-6 h-6 text-blue-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold text-sm">Charts</div>
+                    <div className="text-white font-semibold text-sm">
+                      Charts
+                    </div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <LineChart className="w-6 h-6 text-green-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold text-sm">Trends</div>
+                    <div className="text-white font-semibold text-sm">
+                      Trends
+                    </div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <Activity className="w-6 h-6 text-purple-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold text-sm">Metrics</div>
+                    <div className="text-white font-semibold text-sm">
+                      Metrics
+                    </div>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4 text-center">
                     <TrendingUp className="w-6 h-6 text-orange-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold text-sm">Insights</div>
+                    <div className="text-white font-semibold text-sm">
+                      Insights
+                    </div>
                   </div>
                 </div>
               </div>
@@ -202,7 +227,8 @@ export default function InteractiveDashboards() {
               Key Capabilities
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Advanced business intelligence capabilities designed to transform your data into actionable insights
+              Advanced business intelligence capabilities designed to transform
+              your data into actionable insights
             </p>
           </div>
 
@@ -217,7 +243,8 @@ export default function InteractiveDashboards() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Design interactive dashboards that bring data to life — filter, explore, and drill down into metrics with ease.
+                Design interactive dashboards that bring data to life — filter,
+                explore, and drill down into metrics with ease.
               </p>
             </div>
 
@@ -231,7 +258,8 @@ export default function InteractiveDashboards() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Receive up-to-the-minute updates powered by live data streams and automated refresh cycles.
+                Receive up-to-the-minute updates powered by live data streams
+                and automated refresh cycles.
               </p>
             </div>
 
@@ -245,7 +273,8 @@ export default function InteractiveDashboards() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Monitor KPIs, detect emerging patterns, and visualize progress toward business goals.
+                Monitor KPIs, detect emerging patterns, and visualize progress
+                toward business goals.
               </p>
             </div>
 
@@ -259,7 +288,8 @@ export default function InteractiveDashboards() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Distribute scheduled or triggered reports directly to stakeholders — no manual effort required.
+                Distribute scheduled or triggered reports directly to
+                stakeholders — no manual effort required.
               </p>
             </div>
 
@@ -273,7 +303,8 @@ export default function InteractiveDashboards() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Connect data from multiple sources into a single source of truth for comprehensive analysis.
+                Connect data from multiple sources into a single source of truth
+                for comprehensive analysis.
               </p>
             </div>
           </div>
@@ -287,64 +318,84 @@ export default function InteractiveDashboards() {
               Platform Features
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Comprehensive tools and capabilities for building powerful business intelligence solutions
+              Comprehensive tools and capabilities for building powerful
+              business intelligence solutions
             </p>
           </div>
 
-          <div ref={featuresRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            ref={featuresRef}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <Settings className="h-5 w-5 text-blue-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Drag-and-drop dashboard builder</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Drag-and-drop dashboard builder
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <PieChart className="h-5 w-5 text-green-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Custom widget and chart creation</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Custom widget and chart creation
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <Eye className="h-5 w-5 text-purple-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Cross-filtering and drill-down interactions</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Cross-filtering and drill-down interactions
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <RefreshCw className="h-5 w-5 text-orange-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Scheduled report delivery</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Scheduled report delivery
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <Users className="h-5 w-5 text-red-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Role-based access control</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Role-based access control
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <Monitor className="h-5 w-5 text-indigo-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Mobile-responsive layout</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Mobile-responsive layout
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <FileText className="h-5 w-5 text-teal-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Export to Excel, PDF, or API</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Export to Excel, PDF, or API
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <Shield className="h-5 w-5 text-pink-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Secure, scalable architecture</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Secure, scalable architecture
+                </span>
               </div>
             </div>
           </div>
@@ -358,7 +409,8 @@ export default function InteractiveDashboards() {
               Use Cases
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Real-world applications of our business intelligence platform across different business functions
+              Real-world applications of our business intelligence platform
+              across different business functions
             </p>
           </div>
 
@@ -401,7 +453,8 @@ export default function InteractiveDashboards() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Visualize product demand trends, inventory flow, and regional sales performance
+                Visualize product demand trends, inventory flow, and regional
+                sales performance
               </p>
             </div>
 
@@ -429,7 +482,8 @@ export default function InteractiveDashboards() {
               Experience Visual-Driven Decisions
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Pair your predictive models with real-time visual intelligence to empower faster, smarter decisions across every department.
+              Pair your predictive models with real-time visual intelligence to
+              empower faster, smarter decisions across every department.
             </p>
           </div>
 
@@ -442,8 +496,12 @@ export default function InteractiveDashboards() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-6 left-6 text-white">
-                  <h3 className="text-xl font-bold mb-2">Real-Time Analytics</h3>
-                  <p className="text-sm opacity-90">Interactive charts and live data visualization</p>
+                  <h3 className="text-xl font-bold mb-2">
+                    Real-Time Analytics
+                  </h3>
+                  <p className="text-sm opacity-90">
+                    Interactive charts and live data visualization
+                  </p>
                 </div>
               </div>
             </div>
@@ -456,8 +514,12 @@ export default function InteractiveDashboards() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-6 left-6 text-white">
-                  <h3 className="text-xl font-bold mb-2">Business Intelligence</h3>
-                  <p className="text-sm opacity-90">Comprehensive data analysis and reporting</p>
+                  <h3 className="text-xl font-bold mb-2">
+                    Business Intelligence
+                  </h3>
+                  <p className="text-sm opacity-90">
+                    Comprehensive data analysis and reporting
+                  </p>
                 </div>
               </div>
             </div>
@@ -473,7 +535,9 @@ export default function InteractiveDashboards() {
               <div className="absolute inset-0 bg-gradient-to-t from-blue-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 text-white">
                   <h4 className="font-semibold">Data Visualization</h4>
-                  <p className="text-xs opacity-90">Interactive charts & graphs</p>
+                  <p className="text-xs opacity-90">
+                    Interactive charts & graphs
+                  </p>
                 </div>
               </div>
             </div>
@@ -487,7 +551,9 @@ export default function InteractiveDashboards() {
               <div className="absolute inset-0 bg-gradient-to-t from-green-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 text-white">
                   <h4 className="font-semibold">Performance Metrics</h4>
-                  <p className="text-xs opacity-90">KPI tracking & monitoring</p>
+                  <p className="text-xs opacity-90">
+                    KPI tracking & monitoring
+                  </p>
                 </div>
               </div>
             </div>
@@ -501,7 +567,9 @@ export default function InteractiveDashboards() {
               <div className="absolute inset-0 bg-gradient-to-t from-purple-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 text-white">
                   <h4 className="font-semibold">Executive Reports</h4>
-                  <p className="text-xs opacity-90">C-level insights & analytics</p>
+                  <p className="text-xs opacity-90">
+                    C-level insights & analytics
+                  </p>
                 </div>
               </div>
             </div>

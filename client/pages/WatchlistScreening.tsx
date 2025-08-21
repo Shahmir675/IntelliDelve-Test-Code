@@ -14,6 +14,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { useCalendlyContext } from "../App";
+import { Helmet } from "react-helmet-async";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -117,6 +118,13 @@ export default function WatchlistScreening() {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Global Watchlist & Sanctions Screening</title>
+        <meta
+          name="description"
+          content="Comprehensive watchlist and sanctions screening services"
+        />
+      </Helmet>
 
       <section className="relative bg-gradient-to-br from-red-600 to-orange-700 dark:from-brand-navy dark:to-red-900 min-h-screen flex items-center overflow-hidden">
         <div
@@ -138,7 +146,11 @@ export default function WatchlistScreening() {
             </p>
             <div className="flex justify-center">
               <button
-                onClick={() => openCalendly("Global Watchlist & Sanctions Screening - Start Screening")}
+                onClick={() =>
+                  openCalendly(
+                    "Global Watchlist & Sanctions Screening - Start Screening",
+                  )
+                }
                 className="bg-white text-red-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105 shadow-lg"
               >
                 Start Screening

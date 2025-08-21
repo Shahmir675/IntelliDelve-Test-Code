@@ -10,13 +10,14 @@ import {
   Users,
   Globe,
   Target,
-  Lightbulb
+  Lightbulb,
 } from "lucide-react";
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useCalendlyContext } from "../App";
+import { Helmet } from "react-helmet-async";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +32,7 @@ export default function NLP() {
       gsap.fromTo(
         headerRef.current,
         { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" }
+        { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" },
       );
     }
 
@@ -49,7 +50,7 @@ export default function NLP() {
             trigger: capabilitiesRef.current,
             start: "top 80%",
           },
-        }
+        },
       );
     }
 
@@ -67,23 +68,28 @@ export default function NLP() {
             trigger: applicationsRef.current,
             start: "top 80%",
           },
-        }
+        },
       );
     }
   }, []);
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>Natural Language Processing (NLP)</title>
+        <meta
+          name="description"
+          content="Explore our advanced Natural Language Processing (NLP) solutions for extracting insights from text data."
+        />
+      </Helmet>
 
       <section className="relative min-h-screen flex items-center overflow-hidden">
-
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
           }}
         >
-
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/80 to-purple-900/70"></div>
         </div>
 
@@ -94,12 +100,19 @@ export default function NLP() {
               <span className="text-yellow-300">(NLP)</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-4xl mx-auto">
-              IntelliDelve's NLP solutions harness the power of advanced language models to transform text data into actionable insights. From document parsing to semantic understanding, our AI-driven tools streamline and automate language-based analysis at scale.
+              IntelliDelve's NLP solutions harness the power of advanced
+              language models to transform text data into actionable insights.
+              From document parsing to semantic understanding, our AI-driven
+              tools streamline and automate language-based analysis at scale.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={() => openCalendly("Natural Language Processing (NLP) - Schedule Meeting")}
+                onClick={() =>
+                  openCalendly(
+                    "Natural Language Processing (NLP) - Schedule Meeting",
+                  )
+                }
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-full hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Schedule a Meeting
@@ -124,7 +137,8 @@ export default function NLP() {
               Core Capabilities
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Advanced natural language processing capabilities powered by cutting-edge AI and machine learning
+              Advanced natural language processing capabilities powered by
+              cutting-edge AI and machine learning
             </p>
           </div>
 
@@ -139,7 +153,8 @@ export default function NLP() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Leverage cutting-edge machine learning models to interpret human language with high accuracy and contextual relevance.
+                Leverage cutting-edge machine learning models to interpret human
+                language with high accuracy and contextual relevance.
               </p>
             </div>
 
@@ -153,7 +168,8 @@ export default function NLP() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Extract meaning, detect sentiment, and generate concise summaries from long-form content and documents.
+                Extract meaning, detect sentiment, and generate concise
+                summaries from long-form content and documents.
               </p>
             </div>
 
@@ -167,7 +183,8 @@ export default function NLP() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Deliver more accurate and relevant results with intelligent, context-aware search capabilities.
+                Deliver more accurate and relevant results with intelligent,
+                context-aware search capabilities.
               </p>
             </div>
 
@@ -181,7 +198,8 @@ export default function NLP() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Automatically extract structured data from unstructured text in resumes, reports, contracts, and more.
+                Automatically extract structured data from unstructured text in
+                resumes, reports, contracts, and more.
               </p>
             </div>
 
@@ -195,7 +213,8 @@ export default function NLP() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Analyze and respond to incoming text inputs instantly — powering chatbots, live feedback loops, and dynamic interfaces.
+                Analyze and respond to incoming text inputs instantly — powering
+                chatbots, live feedback loops, and dynamic interfaces.
               </p>
             </div>
 
@@ -209,7 +228,8 @@ export default function NLP() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300">
-                Convert unstructured content into organized, searchable knowledge graphs and domain-specific taxonomies.
+                Convert unstructured content into organized, searchable
+                knowledge graphs and domain-specific taxonomies.
               </p>
             </div>
           </div>
@@ -223,64 +243,84 @@ export default function NLP() {
               Key Applications
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Real-world applications of our NLP technology across various industries and use cases
+              Real-world applications of our NLP technology across various
+              industries and use cases
             </p>
           </div>
 
-          <div ref={applicationsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            ref={applicationsRef}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <Target className="h-5 w-5 text-blue-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Sentiment Analysis & Emotion Detection</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Sentiment Analysis & Emotion Detection
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <Eye className="h-5 w-5 text-green-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Named Entity Recognition (NER)</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Named Entity Recognition (NER)
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <BookOpen className="h-5 w-5 text-purple-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Topic Modeling & Text Classification</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Topic Modeling & Text Classification
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <Globe className="h-5 w-5 text-orange-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Language Translation & Localization</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Language Translation & Localization
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <FileText className="h-5 w-5 text-red-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Text Summarization & Content Compression</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Text Summarization & Content Compression
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <Lightbulb className="h-5 w-5 text-indigo-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Question Answering Systems</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Question Answering Systems
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <Users className="h-5 w-5 text-teal-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Intelligent Chatbots & Virtual Assistants</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Intelligent Chatbots & Virtual Assistants
+                </span>
               </div>
             </div>
 
             <div className="bg-white dark:bg-brand-navy rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center space-x-3 mb-4">
                 <Search className="h-5 w-5 text-pink-500" />
-                <span className="font-semibold text-gray-900 dark:text-white">Document Parsing & Compliance Extraction</span>
+                <span className="font-semibold text-gray-900 dark:text-white">
+                  Document Parsing & Compliance Extraction
+                </span>
               </div>
             </div>
           </div>
@@ -294,7 +334,9 @@ export default function NLP() {
               Transform Language into Insight
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Whether analyzing customer feedback, processing large document volumes, or powering intelligent search — IntelliDelve's NLP engine delivers speed, structure, and precision.
+              Whether analyzing customer feedback, processing large document
+              volumes, or powering intelligent search — IntelliDelve's NLP
+              engine delivers speed, structure, and precision.
             </p>
           </div>
 
@@ -308,7 +350,9 @@ export default function NLP() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-6 left-6 text-white">
                   <h3 className="text-xl font-bold mb-2">Text Analysis</h3>
-                  <p className="text-sm opacity-90">Advanced language understanding and processing</p>
+                  <p className="text-sm opacity-90">
+                    Advanced language understanding and processing
+                  </p>
                 </div>
               </div>
             </div>
@@ -322,7 +366,9 @@ export default function NLP() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-6 left-6 text-white">
                   <h3 className="text-xl font-bold mb-2">AI Language Models</h3>
-                  <p className="text-sm opacity-90">Cutting-edge machine learning for language understanding</p>
+                  <p className="text-sm opacity-90">
+                    Cutting-edge machine learning for language understanding
+                  </p>
                 </div>
               </div>
             </div>
@@ -338,7 +384,9 @@ export default function NLP() {
               <div className="absolute inset-0 bg-gradient-to-t from-blue-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 text-white">
                   <h4 className="font-semibold">Document Processing</h4>
-                  <p className="text-xs opacity-90">Intelligent document analysis</p>
+                  <p className="text-xs opacity-90">
+                    Intelligent document analysis
+                  </p>
                 </div>
               </div>
             </div>
@@ -352,7 +400,9 @@ export default function NLP() {
               <div className="absolute inset-0 bg-gradient-to-t from-green-600/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 text-white">
                   <h4 className="font-semibold">Sentiment Analysis</h4>
-                  <p className="text-xs opacity-90">Emotion & opinion detection</p>
+                  <p className="text-xs opacity-90">
+                    Emotion & opinion detection
+                  </p>
                 </div>
               </div>
             </div>

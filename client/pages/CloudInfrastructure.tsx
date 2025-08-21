@@ -22,9 +22,10 @@ import {
   GitBranch,
   Layers,
   BarChart3,
-  Workflow
+  Workflow,
 } from "lucide-react";
 import { useCalendlyContext } from "../App";
+import { Helmet } from "react-helmet-async";
 
 const CloudInfrastructure = memo(() => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -34,68 +35,101 @@ const CloudInfrastructure = memo(() => {
     {
       icon: Cloud,
       title: "Multi-Cloud Architecture",
-      description: "AWS, Azure, and Google Cloud deployment and management with seamless integration",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      features: ["Cross-platform compatibility", "Vendor lock-in prevention", "Cost optimization"]
+      description:
+        "AWS, Azure, and Google Cloud deployment and management with seamless integration",
+      image:
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: [
+        "Cross-platform compatibility",
+        "Vendor lock-in prevention",
+        "Cost optimization",
+      ],
     },
     {
       icon: Settings,
       title: "DevOps Automation",
-      description: "CI/CD pipelines, automated testing, and deployment workflows",
-      image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      features: ["Automated deployments", "Continuous integration", "Infrastructure as Code"]
+      description:
+        "CI/CD pipelines, automated testing, and deployment workflows",
+      image:
+        "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: [
+        "Automated deployments",
+        "Continuous integration",
+        "Infrastructure as Code",
+      ],
     },
     {
       icon: Shield,
       title: "Security & Compliance",
-      description: "Enterprise-grade security with compliance frameworks and monitoring",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      features: ["Zero-trust architecture", "Compliance automation", "Threat detection"]
+      description:
+        "Enterprise-grade security with compliance frameworks and monitoring",
+      image:
+        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: [
+        "Zero-trust architecture",
+        "Compliance automation",
+        "Threat detection",
+      ],
     },
     {
       icon: Zap,
       title: "Auto-Scaling & Optimization",
-      description: "Dynamic resource allocation and intelligent cost optimization",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      features: ["Real-time scaling", "Performance monitoring", "Cost analytics"]
-    }
+      description:
+        "Dynamic resource allocation and intelligent cost optimization",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      features: [
+        "Real-time scaling",
+        "Performance monitoring",
+        "Cost analytics",
+      ],
+    },
   ];
 
   const infrastructureStats = [
     { label: "Uptime Guarantee", value: "99.9%", icon: TrendingUp },
     { label: "Cost Reduction", value: "40%", icon: BarChart3 },
     { label: "Deployment Speed", value: "10x", icon: Zap },
-    { label: "Global Regions", value: "25+", icon: Globe }
+    { label: "Global Regions", value: "25+", icon: Globe },
   ];
 
   const cloudPlatforms = [
     {
       name: "Amazon Web Services",
       logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
-      description: "Leading cloud platform with comprehensive services"
+      description: "Leading cloud platform with comprehensive services",
     },
     {
       name: "Microsoft Azure",
       logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg",
-      description: "Enterprise-focused cloud solutions and hybrid capabilities"
+      description: "Enterprise-focused cloud solutions and hybrid capabilities",
     },
     {
       name: "Google Cloud",
       logo: "https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg",
-      description: "AI-powered cloud infrastructure and data analytics"
+      description: "AI-powered cloud infrastructure and data analytics",
     },
     {
       name: "Kubernetes",
       logo: "https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg",
-      description: "Container orchestration and microservices management"
-    }
+      description: "Container orchestration and microservices management",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
+      <Helmet>
+        <title>Cloud Infrastructure & DevOps Solutions</title>
+        <meta
+          name="description"
+          content="Build scalable, secure, and efficient cloud infrastructure with our comprehensive DevOps solutions and automation services."
+        />
+      </Helmet>
 
-      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
-
+      <section
+        ref={heroRef}
+        className="relative min-h-screen flex items-center overflow-hidden"
+      >
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
@@ -115,7 +149,8 @@ const CloudInfrastructure = memo(() => {
                 </span>
               </h1>
               <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-                Build scalable, secure, and efficient cloud infrastructure with our comprehensive DevOps solutions and automation services.
+                Build scalable, secure, and efficient cloud infrastructure with
+                our comprehensive DevOps solutions and automation services.
               </p>
 
               <div className="grid grid-cols-2 gap-6 mb-8">
@@ -123,7 +158,9 @@ const CloudInfrastructure = memo(() => {
                   <div key={index} className="text-center">
                     <div className="flex items-center justify-center mb-2">
                       <stat.icon className="w-6 h-6 text-cyan-400 mr-2" />
-                      <span className="text-3xl font-bold text-white">{stat.value}</span>
+                      <span className="text-3xl font-bold text-white">
+                        {stat.value}
+                      </span>
                     </div>
                     <p className="text-sm text-gray-300">{stat.label}</p>
                   </div>
@@ -132,7 +169,9 @@ const CloudInfrastructure = memo(() => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={() => openCalendly("Cloud Infrastructure - Schedule Consultation")}
+                  onClick={() =>
+                    openCalendly("Cloud Infrastructure - Schedule Consultation")
+                  }
                   className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   Schedule Consultation
@@ -180,13 +219,17 @@ const CloudInfrastructure = memo(() => {
               Comprehensive Cloud Services
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              From infrastructure design to deployment automation, we provide end-to-end cloud solutions
+              From infrastructure design to deployment automation, we provide
+              end-to-end cloud solutions
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
             {cloudServices.map((service, index) => (
-              <div key={index} className="group bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div
+                key={index}
+                className="group bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              >
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={service.image}
@@ -213,7 +256,9 @@ const CloudInfrastructure = memo(() => {
                     {service.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                        <span className="text-sm text-gray-600 dark:text-gray-300">{feature}</span>
+                        <span className="text-sm text-gray-600 dark:text-gray-300">
+                          {feature}
+                        </span>
                       </div>
                     ))}
                   </div>
@@ -231,13 +276,17 @@ const CloudInfrastructure = memo(() => {
               Multi-Cloud Expertise
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              We work with leading cloud platforms to deliver the best solution for your needs
+              We work with leading cloud platforms to deliver the best solution
+              for your needs
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {cloudPlatforms.map((platform, index) => (
-              <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-2">
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center group hover:-translate-y-2"
+              >
                 <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <img
                     src={platform.logo}
@@ -264,7 +313,8 @@ const CloudInfrastructure = memo(() => {
               DevOps Workflow
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Streamlined development and deployment processes for faster time-to-market
+              Streamlined development and deployment processes for faster
+              time-to-market
             </p>
           </div>
 
@@ -273,25 +323,58 @@ const CloudInfrastructure = memo(() => {
 
             <div className="grid lg:grid-cols-5 gap-8">
               {[
-                { icon: GitBranch, title: "Code", description: "Version control and collaboration", color: "blue" },
-                { icon: Workflow, title: "Build", description: "Automated testing and integration", color: "purple" },
-                { icon: Layers, title: "Deploy", description: "Containerized deployment", color: "green" },
-                { icon: Monitor, title: "Monitor", description: "Real-time performance tracking", color: "orange" },
-                { icon: Settings, title: "Optimize", description: "Continuous improvement", color: "red" }
+                {
+                  icon: GitBranch,
+                  title: "Code",
+                  description: "Version control and collaboration",
+                  color: "blue",
+                },
+                {
+                  icon: Workflow,
+                  title: "Build",
+                  description: "Automated testing and integration",
+                  color: "purple",
+                },
+                {
+                  icon: Layers,
+                  title: "Deploy",
+                  description: "Containerized deployment",
+                  color: "green",
+                },
+                {
+                  icon: Monitor,
+                  title: "Monitor",
+                  description: "Real-time performance tracking",
+                  color: "orange",
+                },
+                {
+                  icon: Settings,
+                  title: "Optimize",
+                  description: "Continuous improvement",
+                  color: "red",
+                },
               ].map((step, index) => (
                 <div key={index} className="relative text-center">
                   <div className="w-20 h-20 mx-auto mb-6 relative z-10">
-                    <div className={`w-full h-full bg-gradient-to-br ${
-                      step.color === 'blue' ? 'from-blue-500 to-cyan-500' :
-                      step.color === 'purple' ? 'from-purple-500 to-indigo-500' :
-                      step.color === 'green' ? 'from-green-500 to-emerald-500' :
-                      step.color === 'orange' ? 'from-orange-500 to-yellow-500' :
-                      'from-red-500 to-pink-500'
-                    } rounded-2xl flex items-center justify-center shadow-xl transform hover:scale-110 transition-transform duration-300`}>
+                    <div
+                      className={`w-full h-full bg-gradient-to-br ${
+                        step.color === "blue"
+                          ? "from-blue-500 to-cyan-500"
+                          : step.color === "purple"
+                            ? "from-purple-500 to-indigo-500"
+                            : step.color === "green"
+                              ? "from-green-500 to-emerald-500"
+                              : step.color === "orange"
+                                ? "from-orange-500 to-yellow-500"
+                                : "from-red-500 to-pink-500"
+                      } rounded-2xl flex items-center justify-center shadow-xl transform hover:scale-110 transition-transform duration-300`}
+                    >
                       <step.icon className="w-10 h-10 text-white" />
                     </div>
                     <div className="absolute -top-3 -right-3 w-8 h-8 bg-white dark:bg-gray-800 rounded-full border-4 border-gray-100 dark:border-gray-700 flex items-center justify-center shadow-lg">
-                      <span className="text-sm font-bold text-gray-900 dark:text-white">{index + 1}</span>
+                      <span className="text-sm font-bold text-gray-900 dark:text-white">
+                        {index + 1}
+                      </span>
                     </div>
                   </div>
 
@@ -318,7 +401,8 @@ const CloudInfrastructure = memo(() => {
                 Why Choose Our Cloud Solutions?
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
-                Transform your infrastructure with cloud solutions that scale with your business and accelerate innovation.
+                Transform your infrastructure with cloud solutions that scale
+                with your business and accelerate innovation.
               </p>
 
               <div className="grid grid-cols-1 gap-4">
@@ -330,11 +414,13 @@ const CloudInfrastructure = memo(() => {
                   "Improved security and compliance posture",
                   "24/7 monitoring and proactive maintenance",
                   "Disaster recovery and business continuity",
-                  "Global reach with edge computing capabilities"
+                  "Global reach with edge computing capabilities",
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-start">
                     <CheckCircle className="w-6 h-6 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700 dark:text-gray-300">{benefit}</span>
+                    <span className="text-gray-700 dark:text-gray-300">
+                      {benefit}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -359,7 +445,8 @@ const CloudInfrastructure = memo(() => {
               Industries We Serve
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Trusted by organizations across diverse sectors for mission-critical cloud infrastructure
+              Trusted by organizations across diverse sectors for
+              mission-critical cloud infrastructure
             </p>
           </div>
 
@@ -372,9 +459,12 @@ const CloudInfrastructure = memo(() => {
               { name: "Media & Entertainment", icon: Monitor },
               { name: "Manufacturing & IoT", icon: Settings },
               { name: "Startups & Scale-ups", icon: TrendingUp },
-              { name: "Enterprise & Government", icon: Award }
+              { name: "Enterprise & Government", icon: Award },
             ].map((industry, index) => (
-              <div key={index} className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300">
+              <div
+                key={index}
+                className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 text-center hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300"
+              >
                 <industry.icon className="w-8 h-8 text-blue-600 dark:text-blue-400 mx-auto mb-3" />
                 <h3 className="font-semibold text-gray-900 dark:text-white text-sm">
                   {industry.name}
@@ -392,12 +482,15 @@ const CloudInfrastructure = memo(() => {
             Ready to Transform Your Infrastructure?
           </h2>
           <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
-            Let's design and implement a cloud solution that scales with your business and accelerates your digital transformation.
+            Let's design and implement a cloud solution that scales with your
+            business and accelerates your digital transformation.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
-              onClick={() => openCalendly("Cloud Infrastructure - Ready to Transform")}
+              onClick={() =>
+                openCalendly("Cloud Infrastructure - Ready to Transform")
+              }
               className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               Get Started Today
