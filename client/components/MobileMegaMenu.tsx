@@ -216,9 +216,14 @@ export const MobileMegaMenu = ({ isOpen, title, sections, onClose }: MobileMegaM
   useEffect(() => {
     if (menuRef.current) {
       if (isOpen) {
-        // Prevent body scroll with inline styles for more reliable control
-        document.body.style.overflow = 'hidden';
-        document.body.style.height = '100vh';
+        // Only prevent body scroll on mobile/tablet screens (below lg breakpoint)
+        const isMobileScreen = window.innerWidth < 1024;
+
+        if (isMobileScreen) {
+          // Prevent body scroll with inline styles for more reliable control
+          document.body.style.overflow = 'hidden';
+          document.body.style.height = '100vh';
+        }
 
         gsap.fromTo(
           menuRef.current,
@@ -230,7 +235,8 @@ export const MobileMegaMenu = ({ isOpen, title, sections, onClose }: MobileMegaM
         document.body.style.overflow = '';
         document.body.style.height = '';
       }
-    }
+    }
+
     return () => {
       document.body.style.overflow = '';
       document.body.style.height = '';

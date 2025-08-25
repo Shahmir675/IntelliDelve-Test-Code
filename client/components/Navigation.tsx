@@ -501,9 +501,10 @@ const Navigation = memo(() => {
   }, []);
 
   // Handle window resize
-  // Prevent scroll when menus are open
+  // Prevent scroll only when mobile menu is open, not for desktop dropdown menus
   useEffect(() => {
-    const shouldPreventScroll = activeMenu || isMobileMenuOpen;
+    // Only prevent scrolling for mobile menu, not desktop dropdown menus
+    const shouldPreventScroll = isMobileMenuOpen;
 
     if (shouldPreventScroll) {
       document.body.style.overflow = "hidden";
@@ -517,7 +518,7 @@ const Navigation = memo(() => {
       document.body.style.overflow = "";
       document.body.style.height = "";
     };
-  }, [activeMenu, isMobileMenuOpen]);
+  }, [isMobileMenuOpen]); // Removed activeMenu from dependencies
 
   // Ensure body styles are reset on component mount
   useEffect(() => {
@@ -567,7 +568,7 @@ const Navigation = memo(() => {
           willChange: "transform",
         }}
       >
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="max-w-auto mx-auto px-2 sm:px-4 lg:px-6 ">
           <div className="flex justify-between items-center h-16">
             <Link
               to="/"
@@ -589,7 +590,7 @@ const Navigation = memo(() => {
             </Link>
 
             <div
-              className="hidden 2xl:flex items-center space-x-4 xl:space-x-6 2xl:space-x-8"
+              className="hidden xl:flex items-center space-x-4 xl:space-x-6 2xl:space-x-8"
               data-mega-menu-area
               onMouseLeave={handleMouseLeave}
             >
@@ -674,7 +675,7 @@ const Navigation = memo(() => {
               </Link>
             </div>
 
-            <div className="2xl:hidden flex items-center space-x-3">
+            <div className="xl:hidden flex items-center space-x-3">
               <DarkModeToggle />
               <button
                 onClick={() => {

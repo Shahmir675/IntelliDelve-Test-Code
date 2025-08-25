@@ -68,12 +68,12 @@ const Blogs = () => {
 
   const categories = [
     "All Posts",
-    "Background Screening",
-    "Risk Management",
-    "Employment Screening",
-    "Legal Compliance",
-    "Technology"
+    "Background Screening & Risk Mitigation",
+    "Corporate Due Diligence & Risk Compliance",
+    "AI & Data Science",
+    "Tech Innovation & Startups",
   ];
+
 
   // Filter posts by category (client-side filtering for categories)
   const filteredPosts = useMemo(() => {
@@ -158,18 +158,20 @@ const Blogs = () => {
     </div>
   );
 
+  console.log(categories);
+
   return (
     <div className="min-h-screen">
       <SEO
-        title="Expert Insights on Background Screening | IntelliDelve Blog"
-        description="Stay informed with the latest insights on background checks, employment screening, risk management, and compliance. Expert articles to help protect your business."
-        keywords="background check blog, employment screening insights, risk management articles, compliance updates, hiring best practices"
+        title="Expert Insights on Background Screening & Risk Mitigation | IntelliDelve Blog"
+        description="Stay informed with the latest insights on background checks, employment screening, risk mitigation, and corporate due diligence. Expert articles to help protect your business."
+        keywords="background check blog, employment screening insights, risk mitigation articles, corporate due diligence updates, hiring best practices"
         canonicalUrl="/blogs"
       />
 
       <section
         ref={heroRef}
-        className="relative bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-brand-navy dark:via-brand-navy/90 dark:to-purple-900/20 pt-20 pb-16 overflow-hidden"
+        className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-brand-navy dark:via-brand-navy/90 dark:to-purple-900/20 overflow-hidden"
       >
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 dark:opacity-20 blur-sm"
@@ -193,8 +195,8 @@ const Blogs = () => {
             </h1>
 
             <p className="text-xl text-gray-100 mb-8 leading-relaxed">
-              Stay ahead with expert insights on background screening, risk management,
-              and compliance. Your trusted resource for making informed business decisions.
+              Stay ahead with expert insights on background screening, risk mitigation, and corporate due diligence.
+              Your trusted resource for making informed business decisions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -279,7 +281,7 @@ const Blogs = () => {
                 <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                   {searchQuery || selectedCategory !== "All Posts"
                     ? `Found ${filteredPosts.length} article${filteredPosts.length !== 1 ? 's' : ''} ${searchQuery ? `matching "${searchQuery}"` : `in "${selectedCategory}"`}`
-                    : "Explore our comprehensive library of articles on background screening and business protection"
+                    : "Explore our comprehensive library of articles on background screening, risk mitigation, and corporate due diligence"
                   }
                 </p>
               </div>

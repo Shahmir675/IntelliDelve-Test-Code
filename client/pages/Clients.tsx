@@ -127,7 +127,7 @@ export default function Clients() {
 
       <section
         ref={heroRef}
-        className="relative pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-brand-navy dark:via-brand-navy/90 dark:to-purple-900/20 overflow-hidden"
+        className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-brand-navy dark:via-brand-navy/90 dark:to-purple-900/20 overflow-hidden"
       >
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 dark:opacity-20"

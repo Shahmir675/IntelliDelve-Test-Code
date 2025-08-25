@@ -216,7 +216,7 @@ export default function BackgroundScreening() {
                       <div className="w-20 h-20 bg-white dark:bg-brand-navy rounded-2xl flex items-center justify-center shadow-lg">
                         {step.icon}
                       </div>
-                      <div className="text-5xl font-bold text-gray-400 dark:text-gray-600 mt-4 text-center">
+                      <div className="text-5xl font-bold text-gray-400 dark:text-white mt-4 text-center">
                         {step.number}
                       </div>
                     </div>
@@ -253,7 +253,7 @@ export default function BackgroundScreening() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Why Choose IntelliDelve
             </h2>
-            <p className="text-xl opacity-90 max-w-3xl mx-auto">
+            <p className="text-xl opacity-90 max-w-3xl mx-auto dark:text-white">
               Advanced technology meets human expertise for the most
               comprehensive background screening available
             </p>
